@@ -1,0 +1,30 @@
+Cara Mengatasi Error XAMPP: MySQL shutdown unexpectedly
+
+
+MySQL shutdown unexpectedly - Error MySQL shutdown unexpectedly bisa disebabkan karena ada kesalahan dalam penggunaan port atau karena adanya aktivitas seperti menginstall aplikasi lain yang menyebabkan mysql XAMPP berhenti berjalan. Error MySQL shutdown unexpectedly terlihat saat kita coba menjalankan mysql di XAMPP, dengan pesan-pesan seperti di bawah ini.
+
+12:57:02 AM  [mysql] 	Status change detected: stopped
+12:57:02 AM  [mysql] 	Error: MySQL shutdown unexpectedly.
+12:57:02 AM  [mysql] 	This may be due to a blocked port, missing dependencies, 
+12:57:02 AM  [mysql] 	improper privileges, a crash, or a shutdown by another method.
+12:57:02 AM  [mysql] 	Press the Logs button to view error logs and check
+12:57:02 AM  [mysql] 	the Windows Event Viewer for more clues
+12:57:02 AM  [mysql] 	If you need more help, copy and post this
+12:57:02 AM  [mysql] 	entire log window on the forums
+Lalu, bagaimana cara mengatasi jika terjadi error pada mysql XAMPP di windows; MySQL shutdown unexpectedly ? Berikut ini, step by stepnya: 👇
+
+Step 1. Rename folder c:\xampp\mysql\data menjadi c:\xampp\mysql\data_old (atau bebas mengganti dengan nama lainnya).
+
+Step 2. Buat folder baru c:\xampp\mysql/data.
+
+Step 3. Copy semua folder atau file yang ada di mysql\backup ke folder yang baru saja dibuat yaitu mysql\data.
+
+Step 4. Copy semua folder database yang ada di mysql\data_old ke mysql\data (skip untuk mysql, performance_schema, dan phpmyadmin folders dari data_old).
+
+Step 5. Terakhir, copy file ibdata1 dari mysql\data_old dan replace di dalam folder mysql\data.
+
+Step 6. Start MySQL dari XAMPP control panel.
+
+Selesai. Sekarang mysql sudah bisa digunakan lagi. Tidak ada database yang hilang, tidak ada port yang diubah, tidak perlu install ulang XAMPP.
+
+Happy Coding
